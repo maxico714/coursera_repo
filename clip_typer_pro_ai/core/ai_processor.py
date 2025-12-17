@@ -76,13 +76,13 @@ class AIProcessor:
             from api.ai_providers.deepseek_client import DeepSeekClient
             from api.ai_providers.openai_client import OpenAIClient
             from api.ai_providers.anthropic_client import AnthropicClient
-            from api.ai_providers.base_provider import BaseProvider
+            from api.ai_providers.local_provider import LocalProvider
             
             self.clients = {
                 AIProvider.DEEPSEEK: DeepSeekClient(self.settings_manager),
                 AIProvider.OPENAI: OpenAIClient(self.settings_manager),
                 AIProvider.ANTHROPIC: AnthropicClient(self.settings_manager),
-                AIProvider.LOCAL: BaseProvider(self.settings_manager)  # Placeholder for local models
+                AIProvider.LOCAL: LocalProvider(self.settings_manager)  # Concrete implementation for local models
             }
             
             self.logger.info("AI clients initialized successfully")

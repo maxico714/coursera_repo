@@ -6,7 +6,6 @@ import time
 import threading
 import queue
 import keyboard
-from pynput import keyboard as pynput_keyboard
 from enum import Enum
 from typing import Optional, Callable
 import pyperclip
@@ -155,7 +154,7 @@ class TypingEngine:
             self.current_text = ""
     
     def _type_character(self, char: str):
-        """Type a single character using pynput."""
+        """Type a single character using keyboard library."""
         try:
             # Handle special characters
             if char == '\n':
